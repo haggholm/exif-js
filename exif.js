@@ -736,7 +736,7 @@
 
     function getStringFromDB(buffer, start, length) {
         var outstr = "";
-        for (n = start; n < start+length; n++) {
+        for (var n = start; n < start+length; n++) {
             outstr += String.fromCharCode(buffer.getUint8(n));
         }
         return outstr;
@@ -947,7 +947,7 @@
         if (!imageHasData(img)) return;
         return img.exifdata[tag];
     }
-    
+
     EXIF.getIptcTag = function(img, tag) {
         if (!imageHasData(img)) return;
         return img.iptcdata[tag];
@@ -965,7 +965,7 @@
         }
         return tags;
     }
-    
+
     EXIF.getAllIptcTags = function(img) {
         if (!imageHasData(img)) return {};
         var a,
